@@ -4,7 +4,7 @@ using System;
 namespace EDUnited.App_Code
 {
     /// <summary>
-    /// Summary description for AdditionalInformation
+    /// Summary description for AdditionalInformation 
     /// </summary>
     [Serializable()]
     public class AdditionalInformation
