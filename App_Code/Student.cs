@@ -14,8 +14,8 @@ namespace EDUnited.App_Code
 
         private string sGender = String.Empty;
         private string sBirthPlace = String.Empty;
-        private string sEthnicity = String.Empty;
-        private string sPrimaryLanguage = String.Empty;
+        private Ethnicity oEthnicity;
+        private PrimaryLanguage oPrimaryLanguage;
 
         #endregion
 
@@ -23,13 +23,17 @@ namespace EDUnited.App_Code
 
         public Student() : base() { }
 
-        public Student(string sFirstName, string sMiddleName, string sLastName) : base(sFirstName, sMiddleName, sLastName) {  }
-        public Student(string sFirstName, string sMiddleName, string sLastName, string sGender, string sBirthPlace, string sEthnicity, string sPrimaryLanguage) : base(sFirstName, sMiddleName, sLastName)
+        public Student(string sFirstName, string sMiddleName, string sLastName) : base(sFirstName, sMiddleName, sLastName) 
+        {
+            oEthnicity = new Ethnicity();
+            oPrimaryLanguage = new PrimaryLanguage();
+        }
+        public Student(string sFirstName, string sMiddleName, string sLastName, string sGender, string sBirthPlace, Ethnicity oEthnicity, PrimaryLanguage oPrimaryLanguage) : base(sFirstName, sMiddleName, sLastName)
         {
             Gender = sGender;
             BirthPlace = sBirthPlace;
-            Ethnicity = sEthnicity;
-            PrimaryLanguage = sPrimaryLanguage;
+            Ethnicity = oEthnicity;
+            PrimaryLanguage = oPrimaryLanguage;
         }
 
         #endregion
@@ -51,17 +55,17 @@ namespace EDUnited.App_Code
         }
 
         [Description("Ethnicity")]
-        public string Ethnicity
+        public Ethnicity Ethnicity
         {
-            get { return sEthnicity; }
-            set { sEthnicity = value; }
+            get { return oEthnicity; }
+            set { oEthnicity = value; }
         }
 
         [Description("Primary Language")]
-        public string PrimaryLanguage
+        public PrimaryLanguage PrimaryLanguage
         {
-            get { return sPrimaryLanguage; }
-            set { sPrimaryLanguage = value; }
+            get { return oPrimaryLanguage; }
+            set { oPrimaryLanguage = value; }
         }
 
         #endregion
