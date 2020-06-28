@@ -33,7 +33,7 @@ namespace EDUnited
         /// Takes a document list of attachemtns in and adds them as attachments to the mail object
         /// </summary>
         /// <param name="lAttachments">List of document attachments</param>
-        private void AddAttachments(DocumentList lAttachments) 
+        public void AddAttachments(DocumentList lAttachments) 
         {
             foreach (Document oDoc in lAttachments)
             {

@@ -109,6 +109,9 @@ namespace EDUnited
             pAddress.Zipcode = tbxPhysicalAddressZipcode.Text;
             pAddress.IsMailingAddress = false;
 
+            //Assign physical address object to student//
+            student.PhysicalAddress = pAddress;
+
             #endregion
 
             #region Mailing Address
@@ -121,6 +124,9 @@ namespace EDUnited
             mAddress.State = ddlMailingAddressState.SelectedValue == null ? string.Empty : ddlMailingAddressState.SelectedValue;
             mAddress.Zipcode = tbxMailingAddressZipcode.Text;
             mAddress.IsMailingAddress = true;
+
+            //Assign mailing address object to student//
+            student.MailingAddress = mAddress;
 
             #endregion
 
@@ -136,6 +142,9 @@ namespace EDUnited
             guardian1.Email = tbxGuard1Email.Text;
             guardian1.WorkPhone = tbxGuard1WorkNum.Text;
 
+            //Assign guardian 1 object to student//
+            student.Guardian1 = guardian1;
+
             #endregion
 
             #region Guardian #2
@@ -150,6 +159,9 @@ namespace EDUnited
             guardian2.Email = tbxGuard2Email.Text;
             guardian2.WorkPhone = tbxGuard2WorkNum.Text;
 
+            //Assign guardian 2 object to student//
+            student.Guardian2 = guardian2;
+
             #endregion
 
             #region Emergency Contact #1
@@ -161,6 +173,9 @@ namespace EDUnited
             emergencyContact1.Phone = tbxEmergencyContact1PhoneNum.Text;
             emergencyContact1.Relationship = tbxEmergencyContact1Relationship.Text;
 
+            //Assign emergency contact 1 object to student//
+            student.EmergencyContact1 = emergencyContact1;
+
             #endregion
 
             #region Emergency Contact #2
@@ -171,6 +186,9 @@ namespace EDUnited
             emergencyContact2.LastName = tbxEmergencyContact2LastName.Text;
             emergencyContact2.Phone = tbxEmergencyContact2PhoneNum.Text;
             emergencyContact2.Relationship = tbxEmergencyContact2Relationship.Text;
+
+            //Assign emergency contact 2 object to student//
+            student.EmergencyContact2 = emergencyContact2;
 
             #endregion
 
@@ -199,6 +217,9 @@ namespace EDUnited
             bool.TryParse(rblAllergies.SelectedValue, out bHasAllergies);
             additionalInformation.HaveAllergies = bHasAllergies;
 
+            //Assign additional information object to student//
+            student.AdditionalInformation = additionalInformation;
+
 
             #endregion
 
@@ -220,6 +241,21 @@ namespace EDUnited
 
             #endregion
 
+            #region Create and Save CSV
+
+            //Establish the filename and path
+            string sCSVFilename = HttpContext.Current.Session.SessionID + ".csv";
+            string sCSVFilePath = System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), sCSVFilename);
+
+            //Writing the CSV file to the folder so it can be attached to the mail object
+            WriteCSVToPath(sCSVFilePath, student.ReturnCSVFormat());
+
+            //Add it as a document
+            Document csvdocument = new Document(sCSVFilename, sCSVFilename, sCSVFilePath);
+            documents.Add(csvdocument);
+
+            #endregion
+
             #region Mail
 
             //TODO: Finish mailing class
@@ -238,11 +274,37 @@ namespace EDUnited
 
             mail.Body = sbText.ToString();
 
+            mail.AddAttachments(documents);
+
             EmailManager.SendEmail(mail, System.Configuration.ConfigurationManager.AppSettings["MailServer"]);
 
 
             #endregion
 
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// This method is used to write the CSV file locally so it can be attached to the email
+        /// </summary>
+        /// <param name="sPath"></param>
+        /// <param name="sContent"></param>
+        private void WriteCSVToPath(string sPath, string sContent)
+        {
+            //Check if a file already exists
+            if (File.Exists(sPath))
+            {
+                //If it does, remove it so we can start clean
+                File.Delete(sPath);
+            }
+
+            using (StreamWriter sw = File.CreateText(sPath))
+            {
+                sw.Write(sContent);
+            }
         }
 
         #endregion

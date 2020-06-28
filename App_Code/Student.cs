@@ -154,11 +154,15 @@ namespace EDUnited
 
         #region Methods
 
-        public StringBuilder ReturnCSVFormat() 
+        /// <summary>
+        /// TODO: Finish this out
+        /// </summary>
+        /// <returns></returns>
+        public string ReturnCSVFormat() 
         {
             StringBuilder sb = new StringBuilder();
 
-            return sb;
+            return sb.ToString();
         }
 
         #endregion
