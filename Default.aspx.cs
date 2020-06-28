@@ -57,6 +57,7 @@ namespace EDUnited
             student.LastName = tbxStudentLastName.Text;
             student.Gender = rblGender.SelectedValue;
             student.BirthPlace = tbxBirthplace.Text;
+            student.DOB = tbxDOB.Text;
 
             //It should never be null but check just in case//            
             student.Grade = ddlEnrollingGrade.SelectedValue == null ? string.Empty : ddlEnrollingGrade.SelectedValue;
@@ -270,7 +271,7 @@ namespace EDUnited
             sbText.Append(Environment.NewLine);
             sbText.Append(Environment.NewLine);
             sbText.Append("The attached CSV file contains all the information submitted on the registration form.");
-            sbText.Append(String.Format("There are also {0} supporting documents attached.", documents.Count));
+            sbText.Append(String.Format("There are a total of {0} documents attached.", documents.Count));
 
             mail.Body = sbText.ToString();
 
