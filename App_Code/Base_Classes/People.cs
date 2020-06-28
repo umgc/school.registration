@@ -1,7 +1,7 @@
-﻿using EDUnited.App_Code.Attributes;
+﻿using EDUnited.Attributes;
 using System;
 
-namespace EDUnited.App_Code.Base_Classes
+namespace EDUnited.Base_Classes
 {
     /// <summary>
     /// Summary description for People

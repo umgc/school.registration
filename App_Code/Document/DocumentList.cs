@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace EDUnited.App_Code.Documents
+namespace EDUnited.Documents
 {
     /// <summary>
     /// Summary description for DocumentList

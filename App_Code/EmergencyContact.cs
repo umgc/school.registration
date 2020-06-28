@@ -1,8 +1,8 @@
-﻿using EDUnited.App_Code.Attributes;
-using EDUnited.App_Code.Base_Classes;
+﻿using EDUnited.Attributes;
+using EDUnited.Base_Classes;
 using System;
 
-namespace EDUnited.App_Code
+namespace EDUnited
 {
     /// <summary>
     /// Summary description for EmergencyContact

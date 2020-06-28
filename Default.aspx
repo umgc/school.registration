@@ -32,13 +32,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxStudentFirstName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal first name" placeholder="First"></asp:TextBox>
+            <asp:TextBox ID="tbxStudentFirstName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal first name" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredFirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxStudentFirstName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
             <asp:TextBox ID="tbxStudentMiddleName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal middle name" placeholder="Middle"></asp:TextBox>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxStudentLastName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal last name" placeholder="Last"></asp:TextBox>
+            <asp:TextBox ID="tbxStudentLastName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal last name" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredLastName" runat="server" ErrorMessage="*" ControlToValidate="tbxStudentLastName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -48,8 +48,8 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:RadioButtonList ID="rblGender" runat="server" RepeatDirection="Horizontal" CssClass="rbl">
-                <asp:ListItem>Male</asp:ListItem>
+            <asp:RadioButtonList ID="rblGender" runat="server" RepeatDirection="Horizontal" CssClass="rbl" ControlToValidate="rblGender">
+                <asp:ListItem Selected="True">Male</asp:ListItem>
                 <asp:ListItem>Female</asp:ListItem>
             </asp:RadioButtonList>
         </div>
@@ -61,10 +61,10 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxDOB" runat="server" CausesValidation="True" MaxLength="8" CssClass="date onlynumbers" placeholder="MM/DD/YYYY"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="valExpressionMaskDOB" runat="server" ErrorMessage="Date of birth format MM/DD/YYYY" ValidationExpression="^[0-9]{8,8}$" ControlToValidate="tbxDOB" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:TextBox ID="tbxDOB" runat="server" CausesValidation="True" MaxLength="10" CssClass="date" TextMode="Date" placeholder="MM/DD/YYYY"></asp:TextBox>            
+             <asp:RequiredFieldValidator ID="valRequiredDOB" runat="server" ErrorMessage="*" ControlToValidate="tbxDOB" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
-    </div>
+    </div>    
     <div class="row">
         <div class="col-md-3">
             <p>
@@ -127,9 +127,9 @@
         </div>
         <div class="col-md-9">
             <asp:RadioButtonList ID="rblHispanicLatinoQuestion" runat="server" RepeatDirection="Horizontal" CssClass="rbl">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Value="true">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="false">No</asp:ListItem>
+            </asp:RadioButtonList>            
         </div>
     </div>
     <div class="titlebar">
@@ -175,14 +175,14 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxPhysicalAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox>
+            <asp:TextBox ID="tbxPhysicalAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressStreet" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressStreet" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxPhysicalAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox>
+            <asp:TextBox ID="tbxPhysicalAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressCity" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressCity" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
             <asp:DropDownList ID="ddlPhysicalAddressState" runat="server" CssClass="ddl">
@@ -286,7 +286,7 @@
             </asp:DropDownList>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxPhysicalAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox>
+            <asp:TextBox ID="tbxPhysicalAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressZipcode" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressZipcode" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <hr />
@@ -297,14 +297,14 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxMailingAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox>
+            <asp:TextBox ID="tbxMailingAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressStreet" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressStreet" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxMailingAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox>
+            <asp:TextBox ID="tbxMailingAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressCity" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressCity" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
             <asp:DropDownList ID="ddlMailingAddressState" runat="server" CssClass="ddl">
@@ -408,7 +408,7 @@
             </asp:DropDownList>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxMailingAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox>
+            <asp:TextBox ID="tbxMailingAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressZipcode" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressZipcode" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="titlebar">
@@ -622,15 +622,15 @@
         </div>
         <div class="col-md-9">
             <asp:RadioButtonList ID="rblDiagHealth" runat="server" RepeatDirection="Horizontal" CssClass="rbl">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Value="true">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="false">No</asp:ListItem>
+            </asp:RadioButtonList>            
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
             <p>
-                If Yes, Briefly Describe:
+                If yes, briefly describe:
             </p>
         </div>
         <div class="col-md-9">
@@ -645,9 +645,9 @@
         </div>
         <div class="col-md-9">
             <asp:RadioButtonList ID="rblIEP" runat="server" RepeatDirection="Horizontal" CssClass="rbl">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Value="true">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="false">No</asp:ListItem>
+            </asp:RadioButtonList>            
         </div>
     </div>
     <div class="row">
@@ -658,9 +658,9 @@
         </div>
         <div class="col-md-9">
             <asp:RadioButtonList ID="rbl504" runat="server" RepeatDirection="Horizontal" CssClass="rbl">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Value="true">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="false">No</asp:ListItem>
+            </asp:RadioButtonList>           
         </div>
     </div>
     <div class="row">
@@ -671,9 +671,9 @@
         </div>
         <div class="col-md-9">
             <asp:RadioButtonList ID="rblAllergies" runat="server" RepeatDirection="Horizontal" CssClass="rbl">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Value="true">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="false">No</asp:ListItem>
+            </asp:RadioButtonList>            
         </div>
     </div>
     <div class="titlebar">
@@ -718,7 +718,7 @@ becomes a non-resident and that I am liable for any fees that may be incured the
     </div>
     <div class="row">
         <div class="col-md-12">
-            <asp:Button ID="cmdSubmitReg" runat="server" Text="Submit Registration" CssClass="button" />
+            <asp:Button ID="cmdSubmitReg" runat="server" Text="Submit Registration" CssClass="button" OnClick="cmdSubmitReg_Click" />
         </div>
     </div>
     <div class="titlebar">

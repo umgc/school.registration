@@ -1,6 +1,6 @@
 using System;
 
-namespace EDUnited.App_Code.Attributes
+namespace EDUnited.Attributes
 {
     /// <summary>
     /// Summary description for DescriptionAttribute.

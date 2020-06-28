@@ -1,7 +1,7 @@
 using System.Net.Mail;
 using System.Net;
 
-namespace EDUnited.App_Code.Utilities
+namespace EDUnited.Utilities
 {
     /// <summary>
     /// Summary description for EmailManager.

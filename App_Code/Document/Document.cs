@@ -1,7 +1,7 @@
-using EDUnited.App_Code.Attributes;
+using EDUnited.Attributes;
 using System;
 
-namespace EDUnited.App_Code.Documents
+namespace EDUnited.Documents
 {
     /// <summary>
     /// Summary description for Document
@@ -13,6 +13,7 @@ namespace EDUnited.App_Code.Documents
 
         private string sSessionFilename = String.Empty;
         private string sFilename = String.Empty;
+        private string sCompletePath = String.Empty;
 
         #endregion
 
@@ -20,10 +21,11 @@ namespace EDUnited.App_Code.Documents
 
         public Document() { }
 
-        public Document(string sSessionFilename, string sFilename)  
+        public Document(string sSessionFilename, string sFilename, string sCompletePath)  
         {
             FilenameWithSessionID = sSessionFilename;
             Filename = sFilename;
+            CompletePath = sCompletePath;
         }
 
         #endregion
@@ -42,6 +44,13 @@ namespace EDUnited.App_Code.Documents
         {
             get { return sSessionFilename; }
             set { sSessionFilename = value; }
+        }
+
+        [Description("Complete Path")]
+        public string CompletePath
+        {
+            get { return sCompletePath; }
+            set { sCompletePath = value; }
         }
 
         #endregion

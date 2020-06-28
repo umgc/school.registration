@@ -24,6 +24,15 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxStudentFirstName;
 
         /// <summary>
+        /// valRequiredFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFirstName;
+
+        /// <summary>
         /// tbxStudentMiddleName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace EDUnited
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxStudentLastName;
+
+        /// <summary>
+        /// valRequiredLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredLastName;
 
         /// <summary>
         /// rblGender control.
@@ -60,13 +78,13 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxDOB;
 
         /// <summary>
-        /// valExpressionMaskDOB control.
+        /// valRequiredDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator valExpressionMaskDOB;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredDOB;
 
         /// <summary>
         /// tbxBirthplace control.
@@ -132,6 +150,15 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxPhysicalAddressStreet;
 
         /// <summary>
+        /// valRequiredPhysicalAddressStreet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredPhysicalAddressStreet;
+
+        /// <summary>
         /// tbxPhysicalAddressCity control.
         /// </summary>
         /// <remarks>
@@ -139,6 +166,15 @@ namespace EDUnited
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxPhysicalAddressCity;
+
+        /// <summary>
+        /// valRequiredPhysicalAddressCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredPhysicalAddressCity;
 
         /// <summary>
         /// ddlPhysicalAddressState control.
@@ -159,6 +195,15 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxPhysicalAddressZipcode;
 
         /// <summary>
+        /// valRequiredPhysicalAddressZipcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredPhysicalAddressZipcode;
+
+        /// <summary>
         /// tbxMailingAddressStreet control.
         /// </summary>
         /// <remarks>
@@ -168,6 +213,15 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxMailingAddressStreet;
 
         /// <summary>
+        /// valRequiredMailingAddressStreet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredMailingAddressStreet;
+
+        /// <summary>
         /// tbxMailingAddressCity control.
         /// </summary>
         /// <remarks>
@@ -175,6 +229,15 @@ namespace EDUnited
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxMailingAddressCity;
+
+        /// <summary>
+        /// valRequiredMailingAddressCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredMailingAddressCity;
 
         /// <summary>
         /// ddlMailingAddressState control.
@@ -193,6 +256,15 @@ namespace EDUnited
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxMailingAddressZipcode;
+
+        /// <summary>
+        /// valRequiredMailingAddressZipcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredMailingAddressZipcode;
 
         /// <summary>
         /// tbxGuard1FirstName control.

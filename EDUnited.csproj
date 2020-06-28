@@ -159,20 +159,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Base_Classes\People.cs" />
-    <Content Include="App_Code\Document\Document.cs" />
-    <Content Include="App_Code\Document\DocumentList.cs" />
-    <Content Include="App_Code\Attributes\DescriptionAttribute.cs" />
-    <Content Include="App_Code\Attributes\RequiredAttribute.cs" />
-    <Content Include="App_Code\Utilities\EmailManager.cs" />
-    <Content Include="App_Code\Student.cs" />
-    <Content Include="App_Code\Guardian.cs" />
-    <Content Include="App_Code\EmergencyContact.cs" />
-    <Content Include="App_Code\Address.cs" />
-    <Content Include="App_Code\PrimaryLanguage.cs" />
-    <Content Include="App_Code\Ethnicity.cs" />
-    <Content Include="App_Code\AdditionalInformation.cs" />
-    <Content Include="App_Code\Mail.cs" />
+    <Compile Include="App_Code\Base_Classes\People.cs" />
+    <Compile Include="App_Code\Document\Document.cs" />
+    <Compile Include="App_Code\Document\DocumentList.cs" />
+    <Compile Include="App_Code\Attributes\DescriptionAttribute.cs" />
+    <Compile Include="App_Code\Attributes\RequiredAttribute.cs" />
+    <Compile Include="App_Code\Utilities\EmailManager.cs" />
+    <Compile Include="App_Code\Student.cs" />
+    <Compile Include="App_Code\Guardian.cs" />
+    <Compile Include="App_Code\EmergencyContact.cs" />
+    <Compile Include="App_Code\Address.cs" />
+    <Compile Include="App_Code\PrimaryLanguage.cs" />
+    <Compile Include="App_Code\Ethnicity.cs" />
+    <Compile Include="App_Code\AdditionalInformation.cs" />
+    <Compile Include="App_Code\Mail.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">

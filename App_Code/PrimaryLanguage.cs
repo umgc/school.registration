@@ -1,7 +1,7 @@
-﻿using EDUnited.App_Code.Attributes;
+﻿using EDUnited.Attributes;
 using System;
 
-namespace EDUnited.App_Code
+namespace EDUnited
 {
     /// <summary>
     /// Summary description for PrimaryLanguage

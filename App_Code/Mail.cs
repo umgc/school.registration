@@ -1,8 +1,8 @@
-﻿using EDUnited.App_Code.Documents;
+﻿using EDUnited.Documents;
 using System;
 using System.Net.Mail;
 
-namespace EDUnited.App_Code
+namespace EDUnited
 {
     /// <summary>
     /// Summary description for Mail
@@ -10,7 +10,6 @@ namespace EDUnited.App_Code
     [Serializable()]
     public class Mail : MailMessage
     {
-
         #region Constructors
 
         public Mail() : base() { }
@@ -38,7 +37,7 @@ namespace EDUnited.App_Code
         {
             foreach (Document oDoc in lAttachments)
             {
-                this.Attachments.Add(new Attachment(oDoc.Filename));
+                this.Attachments.Add(new Attachment(oDoc.CompletePath));
             }
         }
 

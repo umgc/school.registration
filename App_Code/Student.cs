@@ -1,8 +1,8 @@
-﻿using EDUnited.App_Code.Attributes;
-using EDUnited.App_Code.Base_Classes;
+﻿using EDUnited.Attributes;
+using EDUnited.Base_Classes;
 using System;
 
-namespace EDUnited.App_Code
+namespace EDUnited
 {
     /// <summary>
     /// Summary description for Student
@@ -14,6 +14,7 @@ namespace EDUnited.App_Code
 
         private string sGender = String.Empty;
         private string sBirthPlace = String.Empty;
+        private string sGrade = String.Empty;
         private Ethnicity oEthnicity;
         private PrimaryLanguage oPrimaryLanguage;
 
@@ -28,10 +29,11 @@ namespace EDUnited.App_Code
             oEthnicity = new Ethnicity();
             oPrimaryLanguage = new PrimaryLanguage();
         }
-        public Student(string sFirstName, string sMiddleName, string sLastName, string sGender, string sBirthPlace, Ethnicity oEthnicity, PrimaryLanguage oPrimaryLanguage) : base(sFirstName, sMiddleName, sLastName)
+        public Student(string sFirstName, string sMiddleName, string sLastName, string sGender, string sBirthPlace, string sGrade, Ethnicity oEthnicity, PrimaryLanguage oPrimaryLanguage) : base(sFirstName, sMiddleName, sLastName)
         {
             Gender = sGender;
             BirthPlace = sBirthPlace;
+            Grade = sGrade;
             Ethnicity = oEthnicity;
             PrimaryLanguage = oPrimaryLanguage;
         }
@@ -52,6 +54,13 @@ namespace EDUnited.App_Code
         {
             get { return sBirthPlace; }
             set { sBirthPlace = value; }
+        }
+
+        [Description("Grade")]
+        public string Grade
+        {
+            get { return sGrade; }
+            set { sGrade = value; }
         }
 
         [Description("Ethnicity")]
