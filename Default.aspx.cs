@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Mail;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -105,6 +107,7 @@ namespace EDUnited
             //It should never be null but check just in case//
             pAddress.State = ddlPhysicalAddressState.SelectedValue == null ? string.Empty : ddlPhysicalAddressState.SelectedValue;
             pAddress.Zipcode = tbxPhysicalAddressZipcode.Text;
+            pAddress.IsMailingAddress = false;
 
             #endregion
 
@@ -117,6 +120,7 @@ namespace EDUnited
             //It should never be null but check just in case//
             mAddress.State = ddlMailingAddressState.SelectedValue == null ? string.Empty : ddlMailingAddressState.SelectedValue;
             mAddress.Zipcode = tbxMailingAddressZipcode.Text;
+            mAddress.IsMailingAddress = true;
 
             #endregion
 
@@ -126,6 +130,7 @@ namespace EDUnited
             guardian1.FirstName = tbxGuard1FirstName.Text;
             guardian1.MiddleName = tbxGuard1MiddleName.Text;
             guardian1.LastName = tbxGuard1LastName.Text;
+            guardian1.Relationship = tbxGuard1Relationship.Text;
             guardian1.CellPhone = tbxGuard1CellNum.Text;
             guardian1.Employer = tbxGuard1Employer.Text;
             guardian1.Email = tbxGuard1Email.Text;
@@ -139,6 +144,7 @@ namespace EDUnited
             guardian2.FirstName = tbxGuard2FirstName.Text;
             guardian2.MiddleName = tbxGuard2MiddleName.Text;
             guardian2.LastName = tbxGuard2LastName.Text;
+            guardian2.Relationship = tbxGuard2Relationship.Text;
             guardian2.CellPhone = tbxGuard2CellNum.Text;
             guardian2.Employer = tbxGuard2Employer.Text;
             guardian2.Email = tbxGuard2Email.Text;
@@ -218,6 +224,21 @@ namespace EDUnited
 
             //TODO: Finish mailing class
             Mail mail = new Mail();
+
+            mail.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["SendRegistrationFrom"]);
+            mail.To.Add(new MailAddress(System.Configuration.ConfigurationManager.AppSettings["SendRegistrationTo"]));
+            mail.Subject = String.Format("New registration form has been received for student: {0} {1}", student.FirstName, student.LastName);
+
+            StringBuilder sbText = new StringBuilder();
+            sbText.Append(String.Format("{0} {1} as been submitted as a new registered student for grade {2}", student.FirstName, student.LastName, student.Grade));
+            sbText.Append(Environment.NewLine);
+            sbText.Append(Environment.NewLine);
+            sbText.Append("The attached CSV file contains all the information submitted on the registration form.");
+            sbText.Append(String.Format("There are also {0} supporting documents attached.", documents.Count));
+
+            mail.Body = sbText.ToString();
+
+            EmailManager.SendEmail(mail, System.Configuration.ConfigurationManager.AppSettings["MailServer"]);
 
 
             #endregion

@@ -294,6 +294,15 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxGuard1LastName;
 
         /// <summary>
+        /// tbxGuard1Relationship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxGuard1Relationship;
+
+        /// <summary>
         /// tbxGuard1CellNum control.
         /// </summary>
         /// <remarks>
@@ -382,6 +391,15 @@ namespace EDUnited
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxGuard2LastName;
+
+        /// <summary>
+        /// tbxGuard2Relationship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxGuard2Relationship;
 
         /// <summary>
         /// tbxGuard2CellNum control.

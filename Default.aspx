@@ -433,6 +433,16 @@
     <div class="row">
         <div class="col-md-3">
             <p>
+                Relationship:
+            </p>
+        </div>
+        <div class="col-md-9">
+            <asp:TextBox ID="tbxGuard1Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>
                 Cellphone #:
             </p>
         </div>
@@ -488,6 +498,16 @@
         </div>
         <div class="col-md-3">
             <asp:TextBox ID="tbxGuard2LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>
+                Relationship:
+            </p>
+        </div>
+        <div class="col-md-9">
+            <asp:TextBox ID="tbxGuard2Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox>
         </div>
     </div>
     <div class="row">
