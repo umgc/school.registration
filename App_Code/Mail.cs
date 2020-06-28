@@ -39,7 +39,7 @@ namespace EDUnited
             {
                 this.Attachments.Add(new Attachment(oDoc.CompletePath));
             }
-        }
+        }        
 
         #endregion
     }
