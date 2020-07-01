@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<races>
+  <race value="American Indian or Alaska Native" name="American Indian or Alaska Native"></race>
+  <race value="Asian" name="Asian"></race>
+  <race value="Black or African American" name="Black or African American"></race>
+  <race value="Native Hawaiian or Pacific Islander" name="Native Hawaiian or Pacific Islander"></race>
+  <race value="White" name="White"></race>
+</races>

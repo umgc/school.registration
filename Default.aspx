@@ -110,12 +110,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:DropDownList ID="ddlRace" runat="server" CssClass="ddl">
-                <asp:ListItem>American Indian or Alaska Native</asp:ListItem>
-                <asp:ListItem>Asian</asp:ListItem>
-                <asp:ListItem>Black or African American</asp:ListItem>
-                <asp:ListItem>Native Hawaiian or Pacific Islander</asp:ListItem>
-                <asp:ListItem>White</asp:ListItem>
+            <asp:DropDownList ID="ddlRace" runat="server" CssClass="ddl" DataSourceID="raceXmlDataSource" DataTextField="name" DataValueField="value">
             </asp:DropDownList>
         </div>
     </div>
@@ -142,11 +137,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:DropDownList ID="ddlLanguageSpokenInHome" runat="server" CssClass="ddl">
-                <asp:ListItem>English</asp:ListItem>
-                <asp:ListItem>Spanish</asp:ListItem>
-                <asp:ListItem>Chinese</asp:ListItem>
-                <asp:ListItem>Vietnamese</asp:ListItem>
+            <asp:DropDownList ID="ddlLanguageSpokenInHome" runat="server" CssClass="ddl" DataSourceID="languageXmlDataSource" DataTextField="name" DataValueField="value">
             </asp:DropDownList>
         </div>
     </div>
@@ -157,11 +148,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:DropDownList ID="ddlLanguageSpokenByChild" runat="server" CssClass="ddl">
-                <asp:ListItem>English</asp:ListItem>
-                <asp:ListItem>Spanish</asp:ListItem>
-                <asp:ListItem>Chinese</asp:ListItem>
-                <asp:ListItem>Vietnamese</asp:ListItem>
+            <asp:DropDownList ID="ddlLanguageSpokenByChild" runat="server" CssClass="ddl" DataSourceID="languageXmlDataSource" DataTextField="name" DataValueField="value">
             </asp:DropDownList>
         </div>
     </div>
@@ -185,104 +172,7 @@
             <asp:TextBox ID="tbxPhysicalAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressCity" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressCity" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
-            <asp:DropDownList ID="ddlPhysicalAddressState" runat="server" CssClass="ddl">
-                <asp:ListItem Value="AK">Alaska</asp:ListItem>
-
-                <asp:ListItem Value="AZ">Arizona</asp:ListItem>
-
-                <asp:ListItem Value="AR">Arkansas</asp:ListItem>
-
-                <asp:ListItem Value="CA">California</asp:ListItem>
-
-                <asp:ListItem Value="CO">Colorado</asp:ListItem>
-
-                <asp:ListItem Value="CT">Connecticut</asp:ListItem>
-
-                <asp:ListItem Value="DE">Delaware</asp:ListItem>
-
-                <asp:ListItem Value="FL">Florida</asp:ListItem>
-
-                <asp:ListItem Value="GA">Georgia</asp:ListItem>
-
-                <asp:ListItem Value="HI">Hawaii</asp:ListItem>
-
-                <asp:ListItem Value="ID">Idaho</asp:ListItem>
-
-                <asp:ListItem Value="IL">Illinois</asp:ListItem>
-
-                <asp:ListItem Value="IN">Indiana</asp:ListItem>
-
-                <asp:ListItem Value="IA">Iowa</asp:ListItem>
-
-                <asp:ListItem Value="KS">Kansas</asp:ListItem>
-
-                <asp:ListItem Value="KY">Kentucky</asp:ListItem>
-
-                <asp:ListItem Value="LA">Louisiana</asp:ListItem>
-
-                <asp:ListItem Value="ME">Maine</asp:ListItem>
-
-                <asp:ListItem Value="MD">Maryland</asp:ListItem>
-
-                <asp:ListItem Value="MA">Massachusetts</asp:ListItem>
-
-                <asp:ListItem Value="MI">Michigan</asp:ListItem>
-
-                <asp:ListItem Value="MN">Minnesota</asp:ListItem>
-
-                <asp:ListItem Value="MS">Mississippi</asp:ListItem>
-
-                <asp:ListItem Value="MO">Missouri</asp:ListItem>
-
-                <asp:ListItem Value="MT">Montana</asp:ListItem>
-
-                <asp:ListItem Value="NE">Nebraska</asp:ListItem>
-
-                <asp:ListItem Value="NV">Nevada</asp:ListItem>
-
-                <asp:ListItem Value="NH">New Hampshire</asp:ListItem>
-
-                <asp:ListItem Value="NJ">New Jersey</asp:ListItem>
-
-                <asp:ListItem Value="NM">New Mexico</asp:ListItem>
-
-                <asp:ListItem Value="NY">New York</asp:ListItem>
-
-                <asp:ListItem Value="NC">North Carolina</asp:ListItem>
-
-                <asp:ListItem Value="ND">North Dakota</asp:ListItem>
-
-                <asp:ListItem Value="OH">Ohio</asp:ListItem>
-
-                <asp:ListItem Value="OK">Oklahoma</asp:ListItem>
-
-                <asp:ListItem Value="OR">Oregon</asp:ListItem>
-
-                <asp:ListItem Value="PA">Pennsylvania</asp:ListItem>
-
-                <asp:ListItem Value="RI">Rhode Island</asp:ListItem>
-
-                <asp:ListItem Value="SC">South Carolina</asp:ListItem>
-
-                <asp:ListItem Value="SD">South Dakota</asp:ListItem>
-
-                <asp:ListItem Value="TN">Tennessee</asp:ListItem>
-
-                <asp:ListItem Value="TX">Texas</asp:ListItem>
-
-                <asp:ListItem Value="UT">Utah</asp:ListItem>
-
-                <asp:ListItem Value="VT">Vermont</asp:ListItem>
-
-                <asp:ListItem Value="VA">Virginia</asp:ListItem>
-
-                <asp:ListItem Value="WA">Washington</asp:ListItem>
-
-                <asp:ListItem Value="WV">West Virginia</asp:ListItem>
-
-                <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
-
-                <asp:ListItem Value="WY">Wyoming</asp:ListItem>
+            <asp:DropDownList ID="ddlPhysicalAddressState" runat="server" CssClass="ddl" DataSourceID="stateXmlDataSource" DataTextField="name" DataValueField="value">               
             </asp:DropDownList>
         </div>
         <div class="col-md-3">
@@ -307,104 +197,8 @@
             <asp:TextBox ID="tbxMailingAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressCity" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressCity" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
-            <asp:DropDownList ID="ddlMailingAddressState" runat="server" CssClass="ddl">
-                <asp:ListItem Value="AK">Alaska</asp:ListItem>
-
-                <asp:ListItem Value="AZ">Arizona</asp:ListItem>
-
-                <asp:ListItem Value="AR">Arkansas</asp:ListItem>
-
-                <asp:ListItem Value="CA">California</asp:ListItem>
-
-                <asp:ListItem Value="CO">Colorado</asp:ListItem>
-
-                <asp:ListItem Value="CT">Connecticut</asp:ListItem>
-
-                <asp:ListItem Value="DE">Delaware</asp:ListItem>
-
-                <asp:ListItem Value="FL">Florida</asp:ListItem>
-
-                <asp:ListItem Value="GA">Georgia</asp:ListItem>
-
-                <asp:ListItem Value="HI">Hawaii</asp:ListItem>
-
-                <asp:ListItem Value="ID">Idaho</asp:ListItem>
-
-                <asp:ListItem Value="IL">Illinois</asp:ListItem>
-
-                <asp:ListItem Value="IN">Indiana</asp:ListItem>
-
-                <asp:ListItem Value="IA">Iowa</asp:ListItem>
-
-                <asp:ListItem Value="KS">Kansas</asp:ListItem>
-
-                <asp:ListItem Value="KY">Kentucky</asp:ListItem>
-
-                <asp:ListItem Value="LA">Louisiana</asp:ListItem>
-
-                <asp:ListItem Value="ME">Maine</asp:ListItem>
-
-                <asp:ListItem Value="MD">Maryland</asp:ListItem>
-
-                <asp:ListItem Value="MA">Massachusetts</asp:ListItem>
-
-                <asp:ListItem Value="MI">Michigan</asp:ListItem>
-
-                <asp:ListItem Value="MN">Minnesota</asp:ListItem>
-
-                <asp:ListItem Value="MS">Mississippi</asp:ListItem>
-
-                <asp:ListItem Value="MO">Missouri</asp:ListItem>
-
-                <asp:ListItem Value="MT">Montana</asp:ListItem>
-
-                <asp:ListItem Value="NE">Nebraska</asp:ListItem>
-
-                <asp:ListItem Value="NV">Nevada</asp:ListItem>
-
-                <asp:ListItem Value="NH">New Hampshire</asp:ListItem>
-
-                <asp:ListItem Value="NJ">New Jersey</asp:ListItem>
-
-                <asp:ListItem Value="NM">New Mexico</asp:ListItem>
-
-                <asp:ListItem Value="NY">New York</asp:ListItem>
-
-                <asp:ListItem Value="NC">North Carolina</asp:ListItem>
-
-                <asp:ListItem Value="ND">North Dakota</asp:ListItem>
-
-                <asp:ListItem Value="OH">Ohio</asp:ListItem>
-
-                <asp:ListItem Value="OK">Oklahoma</asp:ListItem>
-
-                <asp:ListItem Value="OR">Oregon</asp:ListItem>
-
-                <asp:ListItem Value="PA">Pennsylvania</asp:ListItem>
-
-                <asp:ListItem Value="RI">Rhode Island</asp:ListItem>
-
-                <asp:ListItem Value="SC">South Carolina</asp:ListItem>
-
-                <asp:ListItem Value="SD">South Dakota</asp:ListItem>
-
-                <asp:ListItem Value="TN">Tennessee</asp:ListItem>
-
-                <asp:ListItem Value="TX">Texas</asp:ListItem>
-
-                <asp:ListItem Value="UT">Utah</asp:ListItem>
-
-                <asp:ListItem Value="VT">Vermont</asp:ListItem>
-
-                <asp:ListItem Value="VA">Virginia</asp:ListItem>
-
-                <asp:ListItem Value="WA">Washington</asp:ListItem>
-
-                <asp:ListItem Value="WV">West Virginia</asp:ListItem>
-
-                <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
-
-                <asp:ListItem Value="WY">Wyoming</asp:ListItem>
+            <asp:DropDownList ID="ddlMailingAddressState" runat="server" CssClass="ddl" DataSourceID="stateXmlDataSource" DataTextField="name" DataValueField="value">
+                
             </asp:DropDownList>
         </div>
         <div class="col-md-3">
@@ -421,13 +215,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxGuard1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox>
+            <asp:TextBox ID="tbxGuard1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1FirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1FirstName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxGuard1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox>
+            <asp:TextBox ID="tbxGuard1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1MiddleName" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1MiddleName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxGuard1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox>
+            <asp:TextBox ID="tbxGuard1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1LastName" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1LastName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -437,7 +231,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxGuard1Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox>
+            <asp:TextBox ID="tbxGuard1Relationship" runat="server" CssClass="tbxnormal"> </asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1Relationship" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1Relationship" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -447,7 +241,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxGuard1CellNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox>
+            <asp:TextBox ID="tbxGuard1CellNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1CellNum" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1CellNum" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="valExpressionMaskGuard1CellNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxGuard1CellNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -479,7 +273,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxGuard1Email" runat="server" CausesValidation="True" CssClass="tbxnormal" placeholder="my@email.com"></asp:TextBox>  
+            <asp:TextBox ID="tbxGuard1Email" runat="server" CausesValidation="True" CssClass="tbxnormal" placeholder="my@email.com"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1Email" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1Email" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
             <asp:RegularExpressionValidator ID="valExpressionMaskGuard1Email" runat="server" ErrorMessage="Please enter a valid email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="tbxGuard1Email" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -563,13 +357,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1FirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1FirstName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1MiddleName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1MiddleName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1LastName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1LastName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="row">
@@ -579,7 +373,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact1PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox>          
+            <asp:TextBox ID="tbxEmergencyContact1PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1PhoneNum" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1PhoneNum" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>           
             <asp:RegularExpressionValidator ID="valExpressionMaskEmergCont1Phone" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxEmergencyContact1PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -590,7 +384,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact1Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact1Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1Relationship" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1Relationship" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <hr />
@@ -601,13 +395,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact2FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact2FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2FirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2FirstName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact2MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact2MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2MiddleName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2MiddleName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact2LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact2LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2LastName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2LastName" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="row">
@@ -617,7 +411,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact2PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox>          
+            <asp:TextBox ID="tbxEmergencyContact2PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2PhoneNum" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2PhoneNum" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>           
              <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxEmergencyContact2PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -628,7 +422,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact2Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox>
+            <asp:TextBox ID="tbxEmergencyContact2Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2Relationship" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2Relationship" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="titlebar">
@@ -739,6 +533,9 @@ becomes a non-resident and that I am liable for any fees that may be incured the
     <div class="row">
         <div class="col-md-12">
             <asp:Button ID="cmdSubmitReg" runat="server" Text="Submit Registration" CssClass="button" OnClick="cmdSubmitReg_Click" />
+            <asp:XmlDataSource ID="stateXmlDataSource" runat="server" DataFile="~/App_Data/States.xml"></asp:XmlDataSource>
+            <asp:XmlDataSource ID="languageXmlDataSource" runat="server" DataFile="~/App_Data/Languages.xml"></asp:XmlDataSource>
+            <asp:XmlDataSource ID="raceXmlDataSource" runat="server" DataFile="~/App_Data/Race.xml"></asp:XmlDataSource>
         </div>
     </div>
     <div class="titlebar">

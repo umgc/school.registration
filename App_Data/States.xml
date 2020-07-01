@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<states>
+  <state value="AL" name="Alabama"></state>
+  <state value="AK" name="Alaska"></state>
+  <state value="AZ" name="Arizona"></state>
+  <state value="AR" name="Arkansas"></state>
+  <state value="CA" name="California"></state>
+  <state value="CO" name="Colorado"></state>
+  <state value="CT" name="Connecticut"></state>
+  <state value="DE" name="Delaware"></state>
+  <state value="DC" name="District Of Columbia"></state>
+  <state value="FL" name="Florida"></state>
+  <state value="GA" name="Georgia"></state>
+  <state value="HI" name="Hawaii"></state>
+  <state value="ID" name="Idaho"></state>
+  <state value="IL" name="Illinois"></state>
+  <state value="IN" name="Indiana"></state>
+  <state value="IA" name="Iowa"></state>
+  <state value="KS" name="Kansas"></state>
+  <state value="KY" name="Kentucky"></state>
+  <state value="LA" name="Louisiana"></state>
+  <state value="ME" name="Maine"></state>
+  <state value="MD" name="Maryland"></state>
+  <state value="MA" name="Massachusetts"></state>
+  <state value="MI" name="Michigan"></state>
+  <state value="MN" name="Minnesota"></state>
+  <state value="MS" name="Mississippi"></state>
+  <state value="MO" name="Missouri"></state>
+  <state value="MT" name="Montana"></state>
+  <state value="NE" name="Nebraska"></state>
+  <state value="NV" name="Nevada"></state>
+  <state value="NH" name="New Hampshire"></state>
+  <state value="NJ" name="New Jersey"></state>
+  <state value="NM" name="New Mexico"></state>
+  <state value="NY" name="New York"></state>
+  <state value="NC" name="North Carolina"></state>
+  <state value="ND" name="North Dakota"></state>
+  <state value="OH" name="Ohio"></state>
+  <state value="OK" name="Oklahoma"></state>
+  <state value="OR" name="Oregon"></state>
+  <state value="PA" name="Pennsylvania"></state>
+  <state value="PR" name="Puerto Rico"></state>
+  <state value="RI" name="Rhode Island"></state>
+  <state value="SC" name="South Carolina"></state>
+  <state value="SD" name="South Dakota"></state>
+  <state value="TN" name="Tennessee"></state>
+  <state value="TX" name="Texas"></state>
+  <state value="UT" name="Utah"></state>
+  <state value="VT" name="Vermont"></state>
+  <state value="VI" name="Virgin Islands"></state>
+  <state value="VA" name="Virginia"></state>
+  <state value="WA" name="Washington"></state>
+  <state value="WV" name="West Virginia"></state>
+  <state value="WI" name="Wisconsin"></state>
+  <state value="WY" name="Wyoming"></state>
+</states>
