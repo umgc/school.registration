@@ -1,4 +1,5 @@
 ﻿using EDUnited.Documents;
+using EDUnited.Attributes;
 using System;
 using System.Net.Mail;
 
@@ -10,6 +11,13 @@ namespace EDUnited
     [Serializable()]
     public class Mail : MailMessage
     {
+        #region Members
+
+        private string sCertificatePath = String.Empty;
+        private string sCertificatePassword = String.Empty;
+
+        #endregion
+
         #region Constructors
 
         public Mail() : base() { }
@@ -39,7 +47,25 @@ namespace EDUnited
             {
                 this.Attachments.Add(new Attachment(oDoc.CompletePath));
             }
-        }        
+        }
+
+        #endregion
+
+        #region Properties
+
+        [Description("Certificate Path")]
+        public string CertificatePath
+        {
+            get { return sCertificatePath; }
+            set { sCertificatePath = value; }
+        }
+
+        [Description("Certificate Password")]
+        public string CertificatePassword
+        {
+            get { return sCertificatePassword; }
+            set { sCertificatePassword = value; }
+        }
 
         #endregion
     }

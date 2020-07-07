@@ -7,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Cryptography.X509Certificates;
 
 namespace EDUnited
 {
@@ -261,6 +262,13 @@ namespace EDUnited
 
             //TODO: Finish mailing class
             Mail mail = new Mail();
+
+            //Establish the cert
+            mail.CertificatePassword = System.Configuration.ConfigurationManager.AppSettings["CertPassword"];
+            mail.CertificatePath = System.IO.Path.Combine(Server.MapPath("~/Certs/"), System.Configuration.ConfigurationManager.AppSettings["CertFileName"]);
+
+            //Load the certificate
+            X509Certificate2 oEncryptedCert = new X509Certificate2(mail.CertificatePath, mail.CertificatePassword);
 
             mail.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["SendRegistrationFrom"]);
             mail.To.Add(new MailAddress(System.Configuration.ConfigurationManager.AppSettings["SendRegistrationTo"]));
