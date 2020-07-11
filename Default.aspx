@@ -12,7 +12,7 @@
     <div class="titlebar">
         <p class="lead">Student Registration</p>
         <p>
-            This form is to be completed by the parent, sponser or legal guardian of all students entering this school system. All new or re-registering students must submit verification of the following at the time of enrollment:
+            This form is to be completed by the parent, sponsor or legal guardian of all students entering this school system. All new or re-registering students must submit verification of the following at the time of enrollment:
         </p>
         <ul>
             <li>Proof of residency</li>
@@ -466,7 +466,7 @@
     <div class="row">
         <div class="col-md-3">
             <p>
-                Currently have an 504?
+                Currently have a 504?
             </p>
         </div>
         <div class="col-md-9">

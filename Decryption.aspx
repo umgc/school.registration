@@ -26,6 +26,16 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-3">
+            <p>
+                Passphrase:
+            </p>
+        </div>
+        <div class="col-md-9">
+            <asp:TextBox ID="tbxPassphrase" runat="server" CssClass="tbxnormal" ></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPassphrase" runat="server" ErrorMessage="* Required" ControlToValidate="tbxPassphrase" ForeColor="Red" SetFocusOnError="True" ></asp:RequiredFieldValidator> 
+        </div>
+    </div>
+    <div class="row">
          <div class="col-md-3">
         </div>
         <div class="col-md-9">

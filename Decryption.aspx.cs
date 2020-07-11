@@ -21,7 +21,10 @@ namespace EDUnited
         /// <param name="e"></param>
         protected void cmdDecryptFiles_Click(object sender, EventArgs e)
         {
-            if (fuSupportingDocs.HasFiles)
+            string sPassphrase = System.Configuration.ConfigurationManager.AppSettings["DecryptionPassphrase"];
+            string sEnteredPassphrase = tbxPassphrase.Text;
+
+            if (sPassphrase == sEnteredPassphrase && fuSupportingDocs.HasFiles)
             {
                 foreach (HttpPostedFile uploadedFile in fuSupportingDocs.PostedFiles)
                 {

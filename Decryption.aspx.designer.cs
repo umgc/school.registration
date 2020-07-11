@@ -33,6 +33,24 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.RegularExpressionValidator valExpressionFileUpload;
 
         /// <summary>
+        /// tbxPassphrase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxPassphrase;
+
+        /// <summary>
+        /// valRequiredPassphrase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredPassphrase;
+
+        /// <summary>
         /// cmdDecryptFiles control.
         /// </summary>
         /// <remarks>
