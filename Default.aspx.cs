@@ -1,13 +1,14 @@
 ﻿using EDUnited.Documents;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Net.Mail;
 using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Security.Cryptography.X509Certificates;
+using MimeKit;
+using MailKit.Net.Smtp;
+using System.IO.Compression;
+
 
 namespace EDUnited
 {
@@ -259,21 +260,34 @@ namespace EDUnited
             #endregion
 
             #region Mail
+           
+            //Read the configuration parameters from the web.config
+            string sSendEmailFrom = System.Configuration.ConfigurationManager.AppSettings["SendRegistrationFrom"];
+            string sSendEmailTo = System.Configuration.ConfigurationManager.AppSettings["SendRegistrationTo"];
+            string sSMTPServer = System.Configuration.ConfigurationManager.AppSettings["MailServer"];
+            string sSMTPUsername = System.Configuration.ConfigurationManager.AppSettings["Username"];
+            string sSMTPPassword = System.Configuration.ConfigurationManager.AppSettings["Password"];
 
-            //TODO: Finish mailing class
-            Mail mail = new Mail();
+            bool bEnableSSL = false;
+            bool.TryParse(System.Configuration.ConfigurationManager.AppSettings["MailEnableSSL"], out bEnableSSL);
 
-            //Establish the cert
-            mail.CertificatePassword = System.Configuration.ConfigurationManager.AppSettings["CertPassword"];
-            mail.CertificatePath = System.IO.Path.Combine(Server.MapPath("~/Certs/"), System.Configuration.ConfigurationManager.AppSettings["CertFileName"]);
+            int iPort = 25;
+            int.TryParse(System.Configuration.ConfigurationManager.AppSettings["MailPort"], out iPort);
 
-            //Load the certificate
-            X509Certificate2 oEncryptedCert = new X509Certificate2(mail.CertificatePath, mail.CertificatePassword);
+            //Create new mail message
+            MimeMessage mail = new MimeMessage();
 
-            mail.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["SendRegistrationFrom"]);
-            mail.To.Add(new MailAddress(System.Configuration.ConfigurationManager.AppSettings["SendRegistrationTo"]));
+            //Add the parts of who the email is sent from and sent to
+            mail.From.Add(new MailboxAddress(sSendEmailFrom));
+            mail.To.Add(new MailboxAddress(sSendEmailTo));
+
+            //Add the subject
             mail.Subject = String.Format("New registration form has been received for student: {0} {1}", student.FirstName, student.LastName);
 
+            //Use the bodybuilder class to build the body
+            BodyBuilder bodyBuilder = new BodyBuilder();
+            
+            //Build the text of the body
             StringBuilder sbText = new StringBuilder();
             sbText.Append(String.Format("{0} {1} as been submitted as a new registered student for grade {2}", student.FirstName, student.LastName, student.Grade));
             sbText.Append(Environment.NewLine);
@@ -281,12 +295,51 @@ namespace EDUnited
             sbText.Append("The attached CSV file contains all the information submitted on the registration form.");
             sbText.Append(String.Format("There are a total of {0} documents attached.", documents.Count));
 
-            mail.Body = sbText.ToString();
+           //Assign the body text
+            bodyBuilder.TextBody = sbText.ToString();
 
-            mail.AddAttachments(documents);
+            //Create the zip file that will house all the documents
+            ZipArchive zip = ZipFile.Open(System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), HttpContext.Current.Session.SessionID + ".zip"), ZipArchiveMode.Create);
 
-            EmailManager.SendEmail(mail, System.Configuration.ConfigurationManager.AppSettings["MailServer"]);
+            //Loop through each document that was loaded
+            foreach (Document oDoc in documents)
+            {
+                //Add it to the zip file
+                zip.CreateEntryFromFile(oDoc.CompletePath, oDoc.Filename, CompressionLevel.Optimal);
+            }
 
+            //Free up the zip file for use later
+            zip.Dispose();
+
+            //Encrypt the zip file and add the "_enc" so we know it's encypted
+            CryptoManager.EncryptFile(System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), HttpContext.Current.Session.SessionID + ".zip"), System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), HttpContext.Current.Session.SessionID + "_enc.zip"));
+
+            //Attach it to the email
+            bodyBuilder.Attachments.Add(System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), HttpContext.Current.Session.SessionID + "_enc.zip"));            
+
+            //Add the BodyBuilder parts to the body
+            mail.Body = bodyBuilder.ToMessageBody();
+
+            //Send the email using the values specified in the web.config file
+            using (var smtpClient = new SmtpClient())
+            {
+                smtpClient.Connect(sSMTPServer, iPort, bEnableSSL);
+                smtpClient.Authenticate(sSMTPUsername, sSMTPPassword);
+                smtpClient.Send(mail);
+                smtpClient.Disconnect(true);
+            }
+
+            //Loop through each document that was loaded and remove it
+            foreach (Document oDoc in documents)
+            {
+                File.Delete(oDoc.CompletePath);
+            }
+
+            //Clean up the zip file
+            File.Delete(System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), HttpContext.Current.Session.SessionID + ".zip"));
+
+            //Clean up the encrypted file
+            File.Delete(System.IO.Path.Combine(Server.MapPath("~/UploadedDocs/"), HttpContext.Current.Session.SessionID + "_enc.zip"));
 
             #endregion
 

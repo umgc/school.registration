@@ -242,7 +242,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxGuard1CellNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1CellNum" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1CellNum" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="valExpressionMaskGuard1CellNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxGuard1CellNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="valExpressionMaskGuard1CellNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxGuard1CellNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -263,7 +263,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxGuard1WorkNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox>        
-            <asp:RegularExpressionValidator ID="valExpressionMaskGuard1WorkNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxGuard1WorkNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="valExpressionMaskGuard1WorkNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxGuard1WorkNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -312,7 +312,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxGuard2CellNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox>           
-            <asp:RegularExpressionValidator ID="valExpressionMaskGuard2CellNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxGuard2CellNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="valExpressionMaskGuard2CellNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxGuard2CellNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -333,7 +333,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxGuard2WorkNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox>           
-            <asp:RegularExpressionValidator ID="valExpressionMaskGuard2WorkNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxGuard2WorkNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="valExpressionMaskGuard2WorkNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxGuard2WorkNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -374,7 +374,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxEmergencyContact1PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1PhoneNum" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1PhoneNum" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>           
-            <asp:RegularExpressionValidator ID="valExpressionMaskEmergCont1Phone" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxEmergencyContact1PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="valExpressionMaskEmergCont1Phone" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxEmergencyContact1PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -412,7 +412,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxEmergencyContact2PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2PhoneNum" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2PhoneNum" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>           
-             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[0-9]{10,10}$" ControlToValidate="tbxEmergencyContact2PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+             <asp:RegularExpressionValidator ID="valExpressionMaskEmergCont2Phone" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxEmergencyContact2PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -508,8 +508,8 @@
          <div class="col-md-3">
         </div>
         <div class="col-md-9">
-            <asp:Button ID="cmdUploadDocs" runat="server" Text="Upload" CssClass="button" OnClick="cmdUploadDocs_Click" />
-            <asp:Button ID="cmdRemove" runat="server" Text="Remove" CssClass="button" OnClick="cmdRemove_Click"/>
+            <asp:Button ID="cmdUploadDocs" runat="server" Text="Upload" CssClass="button" OnClick="cmdUploadDocs_Click" CausesValidation="false" />
+            <asp:Button ID="cmdRemove" runat="server" Text="Remove" CssClass="button" OnClick="cmdRemove_Click" CausesValidation="false"/>
         </div>
     </div>
     <div class="row">
