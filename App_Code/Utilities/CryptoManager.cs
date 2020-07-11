@@ -34,6 +34,11 @@ namespace EDUnited
 
         #region Methods
 
+        /// <summary>
+        /// This method is used to encrypt the file sent in and save it to the path in the outfile parameter
+        /// </summary>
+        /// <param name="inputFile">Full path to the file to encrypt</param>
+        /// <param name="outputFile">Full path to the location of where to save the encrypted file</param>
         public static void EncryptFile(string inputFile, string outputFile)
         {
             using (FileStream fsCrypt = new FileStream(outputFile, FileMode.Create))
@@ -55,6 +60,11 @@ namespace EDUnited
             }
         }
 
+        /// <summary>
+        /// This method is used to decrypt the file send in and save it to the path in the outfile parameter
+        /// </summary>
+        /// <param name="inputFile">Full path to the file to decrypt</param>
+        /// <param name="outputFile">Full path to the location of where to save the dencrypted file</param>
         public static void DecryptFile(string inputFile, string outputFile)
         {
             using (FileStream fsCrypt = new FileStream(inputFile, FileMode.Open))
