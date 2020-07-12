@@ -24,7 +24,7 @@ namespace EDUnited
             string sPassphrase = System.Configuration.ConfigurationManager.AppSettings["DecryptionPassphrase"];
             string sEnteredPassphrase = tbxPassphrase.Text;
 
-            if (sPassphrase == sEnteredPassphrase && fuSupportingDocs.HasFiles)
+            if (sPassphrase != string.Empty && sPassphrase == sEnteredPassphrase && fuSupportingDocs.HasFiles)
             {
                 foreach (HttpPostedFile uploadedFile in fuSupportingDocs.PostedFiles)
                 {
