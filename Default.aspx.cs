@@ -343,6 +343,8 @@ namespace EDUnited
 
             #endregion
 
+            Response.Redirect("Submission.aspx");
+
         }
 
         #endregion

@@ -130,6 +130,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\Site.css" />
+    <Content Include="Submission.aspx" />
     <Content Include="Decryption.aspx" />
     <Content Include="DecryptionDocs\Placeholder.txt" />
     <Content Include="Default.aspx" />
@@ -199,6 +200,13 @@
     <Compile Include="App_Code\AdditionalInformation.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Submission.aspx.cs">
+      <DependentUpon>Submission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Submission.aspx.designer.cs">
+      <DependentUpon>Submission.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Decryption.aspx.cs">
       <DependentUpon>Decryption.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
