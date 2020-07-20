@@ -798,6 +798,24 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.ListBox lbLoadedDocs;
 
         /// <summary>
+        /// ExampleCaptcha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BotDetect.Web.UI.WebFormsCaptcha ExampleCaptcha;
+
+        /// <summary>
+        /// tbxCaptchaCodeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxCaptchaCodeTextBox;
+
+        /// <summary>
         /// cmdSubmitReg control.
         /// </summary>
         /// <remarks>

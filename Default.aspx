@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Online School Registration System" Language="C#" Async="true" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="EDUnited._Default" MaintainScrollPositionOnPostBack="true" %>
-
+<%@ Register Assembly="BotDetect" Namespace="BotDetect.Web.UI" TagPrefix="BotDetect" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 
@@ -31,13 +31,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxStudentFirstName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal first name" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredFirstName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxStudentFirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxStudentFirstName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal first name" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredFirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxStudentFirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
             <asp:TextBox ID="tbxStudentMiddleName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal middle name" placeholder="Middle"></asp:TextBox>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxStudentLastName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal last name" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredLastName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxStudentLastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxStudentLastName" runat="server" CssClass="tbxnormal" ToolTip="Enter student's legal last name" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredLastName" runat="server" ErrorMessage="*" ControlToValidate="tbxStudentLastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -61,7 +61,7 @@
         </div>
         <div class="col-md-9">
             <asp:TextBox ID="tbxDOB" runat="server" CausesValidation="True" MaxLength="10" CssClass="date" TextMode="Date" placeholder="MM/DD/YYYY"></asp:TextBox>            
-             <asp:RequiredFieldValidator ID="valRequiredDOB" runat="server" ErrorMessage="* Required" ControlToValidate="tbxDOB" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="valRequiredDOB" runat="server" ErrorMessage="*" ControlToValidate="tbxDOB" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>    
     <div class="row">
@@ -161,21 +161,21 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxPhysicalAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressStreet" runat="server" ErrorMessage="* Required" ControlToValidate="tbxPhysicalAddressStreet" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxPhysicalAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressStreet" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressStreet" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxPhysicalAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressCity" runat="server" ErrorMessage="* Required" ControlToValidate="tbxPhysicalAddressCity" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxPhysicalAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressCity" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressCity" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
             <asp:DropDownList ID="ddlPhysicalAddressState" runat="server" CssClass="ddl" DataSourceID="stateXmlDataSource" DataTextField="name" DataValueField="value">               
             </asp:DropDownList>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxPhysicalAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressZipcode" runat="server" ErrorMessage="* Required" ControlToValidate="tbxPhysicalAddressZipcode" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxPhysicalAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPhysicalAddressZipcode" runat="server" ErrorMessage="*" ControlToValidate="tbxPhysicalAddressZipcode" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <hr />
@@ -186,14 +186,14 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxMailingAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressStreet" runat="server" ErrorMessage="* Required" ControlToValidate="tbxMailingAddressStreet" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxMailingAddressStreet" runat="server" CssClass="tbxnormal" placeholder="Street"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressStreet" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressStreet" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxMailingAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressCity" runat="server" ErrorMessage="* Required" ControlToValidate="tbxMailingAddressCity" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxMailingAddressCity" runat="server" CssClass="tbxnormal" placeholder="City"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressCity" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressCity" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
             <asp:DropDownList ID="ddlMailingAddressState" runat="server" CssClass="ddl" DataSourceID="stateXmlDataSource" DataTextField="name" DataValueField="value">
@@ -201,7 +201,7 @@
             </asp:DropDownList>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxMailingAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressZipcode" runat="server" ErrorMessage="* Required" ControlToValidate="tbxMailingAddressZipcode" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxMailingAddressZipcode" runat="server" CssClass="tbxnormal onlynumbers" placeholder="Zipcode" MaxLength="5"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredMailingAddressZipcode" runat="server" ErrorMessage="*" ControlToValidate="tbxMailingAddressZipcode" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="titlebar">
@@ -214,13 +214,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxGuard1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1FirstName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxGuard1FirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxGuard1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1FirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1FirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxGuard1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1MiddleName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxGuard1MiddleName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxGuard1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1MiddleName" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1MiddleName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxGuard1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1LastName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxGuard1LastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxGuard1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1LastName" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1LastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -230,7 +230,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxGuard1Relationship" runat="server" CssClass="tbxnormal"> </asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1Relationship" runat="server" ErrorMessage="* Required" ControlToValidate="tbxGuard1Relationship" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxGuard1Relationship" runat="server" CssClass="tbxnormal"> </asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1Relationship" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1Relationship" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -240,7 +240,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxGuard1CellNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1CellNum" runat="server" ErrorMessage="* Required" ControlToValidate="tbxGuard1CellNum" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="tbxGuard1CellNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1CellNum" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1CellNum" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="valExpressionMaskGuard1CellNum" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxGuard1CellNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -272,7 +272,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxGuard1Email" runat="server" CausesValidation="True" CssClass="tbxnormal" placeholder="my@email.com"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1Email" runat="server" ErrorMessage="* Required" ControlToValidate="tbxGuard1Email" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxGuard1Email" runat="server" CausesValidation="True" CssClass="tbxnormal" placeholder="my@email.com"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredGuard1Email" runat="server" ErrorMessage="*" ControlToValidate="tbxGuard1Email" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
             <asp:RegularExpressionValidator ID="valExpressionMaskGuard1Email" runat="server" ErrorMessage="Please enter a valid email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="tbxGuard1Email" Display="Dynamic" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -356,13 +356,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1FirstName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact1FirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact1FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1FirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1FirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1MiddleName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact1MiddleName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact1MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1MiddleName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1MiddleName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1LastName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact1LastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact1LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1LastName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1LastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="row">
@@ -372,7 +372,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact1PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1PhoneNum" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact1PhoneNum" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>           
+            <asp:TextBox ID="tbxEmergencyContact1PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1PhoneNum" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1PhoneNum" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>           
             <asp:RegularExpressionValidator ID="valExpressionMaskEmergCont1Phone" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxEmergencyContact1PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -383,7 +383,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact1Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1Relationship" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact1Relationship" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact1Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact1Relationship" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact1Relationship" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <hr />
@@ -394,13 +394,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact2FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2FirstName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact2FirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact2FirstName" runat="server" CssClass="tbxnormal" placeholder="First"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2FirstName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2FirstName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact2MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2MiddleName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact2MiddleName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact2MiddleName" runat="server" CssClass="tbxnormal" placeholder="Middle"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2MiddleName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2MiddleName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
         <div class="col-md-3">
-            <asp:TextBox ID="tbxEmergencyContact2LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2LastName" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact2LastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact2LastName" runat="server" CssClass="tbxnormal" placeholder="Last"></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredEmergencyContact2LastName" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2LastName" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="row">
@@ -410,7 +410,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact2PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2PhoneNum" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact2PhoneNum" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>           
+            <asp:TextBox ID="tbxEmergencyContact2PhoneNum" runat="server" CausesValidation="True" MaxLength="10" CssClass="phonenum onlynumbers" placeholder="(###) ###-####"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2PhoneNum" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2PhoneNum" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator>           
              <asp:RegularExpressionValidator ID="valExpressionMaskEmergCont2Phone" runat="server" ErrorMessage="Phone number not in the format (###) ###-####" ValidationExpression="^[\\(]{0,1}([0-9]){3}[\\)] {0,1}[ ]?([^0-1]){1}([0-9]){2}[ ]?[-]?[ ]?([0-9]){4}[ ]*((x){0,1}([0-9]){1,5}){0,1}$" ControlToValidate="tbxEmergencyContact2PhoneNum" Display="Dynamic" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RegularExpressionValidator>
         </div>
     </div>
@@ -421,7 +421,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxEmergencyContact2Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2Relationship" runat="server" ErrorMessage="* Required" ControlToValidate="tbxEmergencyContact2Relationship" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxEmergencyContact2Relationship" runat="server" CssClass="tbxnormal"></asp:TextBox> <asp:RequiredFieldValidator ID="valRelationshipEmergencyContact2Relationship" runat="server" ErrorMessage="*" ControlToValidate="tbxEmergencyContact2Relationship" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger"></asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="titlebar">
@@ -527,6 +527,12 @@ I understand that falsification of any information submitted shall be cause for 
 Furthermore, I understand I am responsible for reporting to the school principal if the student has a change of address or
 becomes a non-resident and that I am liable for any fees that may be incured therein. 
             </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <BotDetect:WebFormsCaptcha ID="ExampleCaptcha" runat="server" UserInputID="tbxCaptchaCodeTextBox" />
+            <asp:TextBox ID="tbxCaptchaCodeTextBox" runat="server" />
         </div>
     </div>
     <div class="row">
