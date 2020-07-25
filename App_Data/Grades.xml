@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grades>
+  <grade value="Pre-K" name="Pre-K"></grade>
+  <grade value="Kindergarten" name="Kindergarten"></grade>
+  <grade value="1st Grade" name="1st Grade"></grade>
+  <grade value="2nd Grade" name="2nd Grade"></grade>
+  <grade value="3rd Grade" name="3rd Grade"></grade>
+  <grade value="4th Grade" name="4th Grade"></grade>
+  <grade value="5th Grade" name="5th Grade"></grade>
+  <grade value="6th Grade" name="6th Grade"></grade>
+  <grade value="7th Grade" name="7th Grade"></grade>
+  <grade value="8th Grade" name="8th Grade"></grade>
+  <grade value="9th Grade" name="9th Grade"></grade>
+  <grade value="10th Grade" name="10th Grade"></grade>
+  <grade value="11th Grade" name="11th Grade"></grade>
+  <grade value="12th Grade" name="12th Grade"></grade>
+</grades>

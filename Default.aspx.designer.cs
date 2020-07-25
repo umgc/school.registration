@@ -834,6 +834,15 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.XmlDataSource stateXmlDataSource;
 
         /// <summary>
+        /// GradeXmlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource GradeXmlDataSource;
+
+        /// <summary>
         /// languageXmlDataSource control.
         /// </summary>
         /// <remarks>

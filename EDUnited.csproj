@@ -127,6 +127,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Grades.xml" />
     <Content Include="App_Data\Languages.xml" />
     <Content Include="App_Data\Race.xml" />
     <Content Include="App_Data\States.xml" />

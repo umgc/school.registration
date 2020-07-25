@@ -81,21 +81,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:DropDownList ID="ddlEnrollingGrade" runat="server" CssClass="ddl">
-                <asp:ListItem>Pre-K</asp:ListItem>
-                <asp:ListItem>Kindergarten</asp:ListItem>
-                <asp:ListItem>1st Grade</asp:ListItem>
-                <asp:ListItem>2nd Grade</asp:ListItem>
-                <asp:ListItem>3rd Grade</asp:ListItem>
-                <asp:ListItem>4th Grade</asp:ListItem>
-                <asp:ListItem>5th Grade</asp:ListItem>
-                <asp:ListItem>6th Grade</asp:ListItem>
-                <asp:ListItem>7th Grade</asp:ListItem>
-                <asp:ListItem>8th Grade</asp:ListItem>
-                <asp:ListItem>9th Grade</asp:ListItem>
-                <asp:ListItem>10th Grade</asp:ListItem>
-                <asp:ListItem>11th Grade</asp:ListItem>
-                <asp:ListItem>12th Grade</asp:ListItem>
+            <asp:DropDownList ID="ddlEnrollingGrade" runat="server" CssClass="ddl" DataSourceID="GradeXmlDataSource" DataTextField="name" DataValueField="value">                
             </asp:DropDownList>
         </div>
     </div>
@@ -539,6 +525,7 @@ becomes a non-resident and that I am liable for any fees that may be incured the
         <div class="col-md-12">
             <asp:Button ID="cmdSubmitReg" runat="server" Text="Submit Registration" CssClass="button" OnClick="cmdSubmitReg_Click" />
             <asp:XmlDataSource ID="stateXmlDataSource" runat="server" DataFile="~/App_Data/States.xml"></asp:XmlDataSource>
+            <asp:XmlDataSource ID="GradeXmlDataSource" runat="server" DataFile="~/App_Data/Grades.xml"></asp:XmlDataSource>
             <asp:XmlDataSource ID="languageXmlDataSource" runat="server" DataFile="~/App_Data/Languages.xml"></asp:XmlDataSource>
             <asp:XmlDataSource ID="raceXmlDataSource" runat="server" DataFile="~/App_Data/Race.xml"></asp:XmlDataSource>
         </div>
