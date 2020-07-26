@@ -31,3 +31,22 @@ $(document).ready(function () {
         }
     });
 });
+
+// COPY INPUT FROM PHYSICAL TO MAILING
+// ==============
+$(document).ready(function () {
+    $('#cbxfilladdress').click(function () {
+
+        // STREET
+        $('#tbxMailingAddressStreet').val($('#tbxPhysicalAddressStreet').val());
+
+        // CITY
+        $('#tbxMailingAddressCity').val($('#tbxPhysicalAddressCity').val());
+
+        // STATE
+        $('#ddlMailingAddressState').val($('#ddlPhysicalAddressState').val());
+
+        // ZIPCODE
+        $('#tbxMailingAddressZipcode').val($('#tbxPhysicalAddressZipcode').val());
+    });
+});

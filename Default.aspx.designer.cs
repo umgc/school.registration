@@ -294,15 +294,6 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxGuard1MiddleName;
 
         /// <summary>
-        /// valRequiredGuard1MiddleName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredGuard1MiddleName;
-
-        /// <summary>
         /// tbxGuard1LastName control.
         /// </summary>
         /// <remarks>
@@ -546,15 +537,6 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.TextBox tbxEmergencyContact1MiddleName;
 
         /// <summary>
-        /// valRequiredEmergencyContact1MiddleName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredEmergencyContact1MiddleName;
-
-        /// <summary>
         /// tbxEmergencyContact1LastName control.
         /// </summary>
         /// <remarks>
@@ -643,15 +625,6 @@ namespace EDUnited
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxEmergencyContact2MiddleName;
-
-        /// <summary>
-        /// valRequiredEmergencyContact2MiddleName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredEmergencyContact2MiddleName;
 
         /// <summary>
         /// tbxEmergencyContact2LastName control.
