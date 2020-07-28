@@ -33,6 +33,7 @@ textarea {
         padding: 0;
     }
 }
+
 .titlebar {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -83,29 +84,46 @@ textarea {
         font-size: 63px;
     }
 }
+
 .rbl input[type="radio"] {
     margin-left: 5px;
     margin-right: 5px;
 }
+
 .ddl {
     width: 250px;
     margin-bottom: 10px;
 }
+
 .tbxnormal, .phonenum, .date {
     width: 250px;
     margin-bottom: 10px;
 }
+
 .row {
     margin-top: 10px;
 }
+
 .button {
     margin-bottom: 10px;
     margin-right: 10px;
 }
+
 .listbox {
     width: 450px;
     margin-bottom: 10px;
 }
+
 .onlynumbers {
 }
 
+.error {
+    background-color: #ffb5b5;
+    padding: 13px 0px 13px 0px;
+}
+
+.errorheader {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
