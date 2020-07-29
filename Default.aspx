@@ -505,14 +505,14 @@
 
         </div>
         <div class="col-md-9">
-            <asp:FileUpload ID="fuSupportingDocs" runat="server" AllowMultiple="True" /> 
+            <asp:FileUpload ID="fuSupportingDocs" runat="server" AllowMultiple="True" /><asp:RegularExpressionValidator ID="SupportingDocsRegularExpressionValidator" runat="server" ErrorMessage="Only PNG, JPG, TXT and PDF are supported" ValidationExpression="^.*\.(png|PNG|jpg|JPG|txt|TXT|pdf|PDF)$" ControlToValidate="fuSupportingDocs" Display="Dynamic" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger" ValidationGroup="FileUpload">Only PNG, JPG, TXT and PDF are supported</asp:RegularExpressionValidator> 
         </div>
     </div>
     <div class="row">
          <div class="col-md-3">
         </div>
         <div class="col-md-9">
-            <asp:Button ID="cmdUploadDocs" runat="server" Text="Upload" CssClass="button" OnClick="cmdUploadDocs_Click" CausesValidation="false" />
+            <asp:Button ID="cmdUploadDocs" runat="server" Text="Upload" CssClass="button" OnClick="cmdUploadDocs_Click" CausesValidation="true" ValidationGroup="FileUpload" />
             <asp:Button ID="cmdRemove" runat="server" Text="Remove" CssClass="button" OnClick="cmdRemove_Click" CausesValidation="false"/>
         </div>
     </div>
