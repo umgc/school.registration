@@ -134,8 +134,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:DropDownList ID="ddlLanguageSpokenInHome" runat="server" CssClass="ddl" DataSourceID="languageXmlDataSource" DataTextField="name" DataValueField="value">
-            </asp:DropDownList>
+            <asp:TextBox ID="tbxLanguageSpokenInHome" runat="server" CssClass="tbxnormal" ToolTip="Enter primary language spoken at home" ></asp:TextBox> <asp:RequiredFieldValidator ID="ValRequiredLanguageSpokenInHome" runat="server" ErrorMessage="Primary language spoken at home is required" ControlToValidate="tbxLanguageSpokenInHome" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger">*</asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="row">
@@ -145,8 +144,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:DropDownList ID="ddlLanguageSpokenByChild" runat="server" CssClass="ddl" DataSourceID="languageXmlDataSource" DataTextField="name" DataValueField="value">
-            </asp:DropDownList>
+            <asp:TextBox ID="tbxLanguageSpokenByChild" runat="server" CssClass="tbxnormal" ToolTip="Enter primary language spoken by child" ></asp:TextBox> <asp:RequiredFieldValidator ID="ValRequiredLanguageSpokenByChild" runat="server" ErrorMessage="Primary language spoken by child is required" ControlToValidate="tbxLanguageSpokenByChild" ForeColor="Red" SetFocusOnError="True" Font-Size="Larger">*</asp:RequiredFieldValidator>
         </div>
     </div>
     <div class="titlebar">

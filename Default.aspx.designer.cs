@@ -132,22 +132,40 @@ namespace EDUnited
         protected global::System.Web.UI.WebControls.RadioButtonList rblHispanicLatinoQuestion;
 
         /// <summary>
-        /// ddlLanguageSpokenInHome control.
+        /// tbxLanguageSpokenInHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLanguageSpokenInHome;
+        protected global::System.Web.UI.WebControls.TextBox tbxLanguageSpokenInHome;
 
         /// <summary>
-        /// ddlLanguageSpokenByChild control.
+        /// ValRequiredLanguageSpokenInHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLanguageSpokenByChild;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValRequiredLanguageSpokenInHome;
+
+        /// <summary>
+        /// tbxLanguageSpokenByChild control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxLanguageSpokenByChild;
+
+        /// <summary>
+        /// ValRequiredLanguageSpokenByChild control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValRequiredLanguageSpokenByChild;
 
         /// <summary>
         /// tbxPhysicalAddressStreet control.

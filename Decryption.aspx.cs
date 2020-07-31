@@ -62,6 +62,10 @@ namespace EDUnited
                     }
                 }
             }
+            else 
+            {
+                valRequiredPassphrase.IsValid = false;
+            }
         }
 
         #endregion      

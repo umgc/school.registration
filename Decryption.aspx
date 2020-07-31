@@ -14,15 +14,19 @@
         </p>
     </div> 
     <div class="row">
+        <div class="col-md-12">
+            <asp:ValidationSummary ID="ValidationSummary" runat="server" ForeColor="Red" HeaderText="<div class='errorheader'>Either the passphrase is incorrect or the file does not meet the requirements</div>"  CssClass="titlebar error" />
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-3">
             <p>
                 Choose file to decrypt:
             </p>
-
         </div>
         <div class="col-md-9">
             <asp:FileUpload ID="fuSupportingDocs" runat="server" AllowMultiple="False"  /> 
-            <asp:RegularExpressionValidator ID="valExpressionFileUpload" runat="server" ControlToValidate="fuSupportingDocs" ErrorMessage="Only encrypted zip files are supported" ValidationExpression="(.*_enc\.([Zz][Ii][Pp])$)" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="valExpressionFileUpload" runat="server" ControlToValidate="fuSupportingDocs" ErrorMessage="Only encrypted zip files are supported" ValidationExpression="(.*_enc\.([Zz][Ii][Pp])$)" Display="Dynamic" ForeColor="Red" SetFocusOnError="True">*</asp:RegularExpressionValidator>
         </div>
     </div>
     <div class="row">
@@ -32,7 +36,7 @@
             </p>
         </div>
         <div class="col-md-9">
-            <asp:TextBox ID="tbxPassphrase" runat="server" CssClass="tbxnormal" ></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPassphrase" runat="server" ErrorMessage="* Required" ControlToValidate="tbxPassphrase" ForeColor="Red" SetFocusOnError="True" ></asp:RequiredFieldValidator> 
+            <asp:TextBox ID="tbxPassphrase" runat="server" CssClass="tbxnormal" ></asp:TextBox> <asp:RequiredFieldValidator ID="valRequiredPassphrase" runat="server" ErrorMessage="Correct passphrase is required" ControlToValidate="tbxPassphrase" ForeColor="Red" SetFocusOnError="True" >*</asp:RequiredFieldValidator> 
         </div>
     </div>
     <div class="row">

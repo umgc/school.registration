@@ -99,10 +99,10 @@ namespace EDUnited
                 PrimaryLanguage primaryLanguage = new PrimaryLanguage();
 
                 //It should never be null but check just in case//
-                primaryLanguage.SpokenByChild = ddlLanguageSpokenByChild.SelectedValue == null ? string.Empty : ddlLanguageSpokenByChild.SelectedValue;
+                primaryLanguage.SpokenByChild = tbxLanguageSpokenByChild.Text;
 
                 //It should never be null but check just in case//
-                primaryLanguage.SpokenInHome = ddlLanguageSpokenInHome.SelectedValue == null ? string.Empty : ddlLanguageSpokenInHome.SelectedValue;
+                primaryLanguage.SpokenInHome = tbxLanguageSpokenInHome.Text;
 
                 //Assign primary language object to student//
                 student.PrimaryLanguage = primaryLanguage;
